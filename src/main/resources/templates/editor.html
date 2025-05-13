@@ -1,10 +1,454 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>Thymeleaf Editor</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style type="text/css">
+    html,
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    b,
+    u,
+    i,
+    center,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td,
+    article,
+    aside,
+    canvas,
+    details,
+    embed,
+    figure,
+    figcaption,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    output,
+    ruby,
+    section,
+    summary,
+    time,
+    mark,
+    audio,
+    video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline;
+    }
+
+    /* HTML5 display-role reset for older browsers */
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    section {
+      display: block;
+    }
+
+    body {
+      line-height: 1;
+    }
+
+    ol {
+      list-style: none;
+    }
+
+    blockquote,
+    q {
+      quotes: none;
+    }
+
+    blockquote:before,
+    blockquote:after,
+    q:before,
+    q:after {
+      content: "";
+      content: none;
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    .container {
+      width: min(1170px, 100%);
+      max-height: 2000px;
+      margin-left: auto;
+      margin-right: auto;
+      background: url(https://mbal-portal-prod.s3.ap-southeast-1.amazonaws.com/images/back_ground_full.png) no-repeat scroll left top transparent;
+    }
+
+    .logo {
+      float: right;
+    }
+
+    .text_content {
+      display: inline-block;
+    }
+
+    .intro {
+      position: relative;
+      margin: 24px 20px;
+    }
+
+    .divider {
+      border-top: 1.5px solid #000;
+      margin: 0px 0px 20px 0px;
+    }
+
+    p {
+      margin-bottom: 6px;
+      text-align: justify;
+      line-height: 1.5;
+      font-size: 12px;
+      color: #000;
+      font-family: Arial;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    ul li::before {
+      content: "-";
+      position: absolute;
+      left: 5px;
+    }
+
+    ul li {
+      font-size: 12px;
+      margin-bottom: 5px;
+      margin-left: 10px;
+      position: relative;
+    }
+
+    ul li span {
+      margin-left: 15px;
+    }
+
+    i {
+      font-style: italic;
+    }
+
+    .product {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    .main-product {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+
+    .line-01 {
+      display: flex;
+      margin-bottom: 40px;
+    }
+
+    .line-02 {
+      display: flex;
+      margin-bottom: 40px;
+    }
+
+    .line-03 {
+      display: flex;
+      margin-bottom: 40px;
+    }
+
+    .column {
+      float: left;
+      margin-right: 50px;
+    }
+
+    .img-rider-product {
+      max-width: 540px;
+      width: 540px;
+    }
+
+    .contact {
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-bottom: 60px;
+      display: inline-block;
+    }
+
+    .blue-link {
+      color: blue;
+      font-weight: bold;
+    }
+
+    .underline {
+      font-weight: bold;
+    }
+
+    .qr-section {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .qr-section img {
+      width: 100px;
+      height: 100px;
+      margin-right: 15px;
+    }
+
+    .footer {
+      position: relative;
+      padding-left: 20px;
+      padding-top: 0px;
+      padding-bottom: 20px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+    }
+
+    .footer img {
+      margin-right: 20px;
+    }
+
+    .footer_menu {
+      font-size: 12px;
+      font-family: Arial;
+    }
+
+    .List {
+      padding: 0;
+      margin: 0 0 10px 0;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .list_item_first {
+      margin-left: 0;
+      color: #60c4ef;
+      list-style: none;
+    }
+
+    .list_item_second {
+      margin-left: 35px;
+      color: #60c4ef;
+    }
+
+    .banner {
+      max-width: 80%;
+    }
+
+    .footer-header-group {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-top: 20px;
+    }
+
+    .footer-header-item {
+      text-align: center;
+    }
+
+    .footer-header-item span {
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    .footer-header-item .divider-line {
+      height: 4px;
+      width: 100%;
+      margin-top: 5px;
+    }
+
+    .transparent {
+      color: #00bfff;
+    }
+
+    .transparent .divider-line {
+      background-color: #00bfff;
+    }
+
+    .agile {
+      color: #0033cc;
+    }
+
+    .agile .divider-line {
+      background-color: #0033cc;
+    }
+
+    .trustworthy {
+      color: #c71585;
+    }
+
+    .trustworthy .divider-line {
+      background-color: #c71585;
+    }
+
+    .passionate {
+      color: #ff4500;
+    }
+
+    .passionate .divider-line {
+      background-color: #ff4500;
+    }
+
+    .united {
+      color: #da5ac4;
+    }
+
+    .united .divider-line {
+      background-color: #da5ac4;
+    }
+
+    b {
+      font-weight: 700;
+    }
+
+    @media screen and (max-width: 480px) {
+      .banner {
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1 th:text="${MBALPrintPolicyVO.issueDate}">Thông điệp mặc định</h1>
+  <div class="text_content">
+    <div class="intro">
+      <br />
+      <p>Kính gửi Quý khách <span th:if="${MBALPrintPolicyVO.policyHolder.['MBALPersonVO'] != null}"
+      th:text="${MBALPrintPolicyVO.policyHolder.MBALPersonVO.fullName}"></span>
+    <span th:if="${MBALPrintPolicyVO.policyHolder.['MBALOrganizationVO'] != null}"
+      th:text="${MBALPrintPolicyVO.policyHolder.MBALOrganizationVO.companyName}"></span></p>
+      <br />
+      <p>
+        Cảm ơn phản hồi của Quý khách về Thư chấp thuận bảo hiểm có điều kiện tới Phòng Thẩm định và Phát hành Hợp đồng MB Ageas Life,
+      </p>
+      <br/>
+      <p>Chúng tôi xin xác nhận đã tiếp nhận thành công Thư chấp thuận bảo hiểm có điều kiện từ Quý khách vào ngày <span th:text="${MBALPrintPolicyVO.cal.uwSubStatusChangedDate}"></span>. Hiện tại, hồ sơ của Quý khách đang được xử lý theo quy trình thẩm định và phát hành hợp đồng bảo hiểm. </p>
+        <br/>
+      <p>Chúng tôi sẽ sớm cập nhật thông tin về tình trạng hợp đồng khi có kết quả tiếp theo. Nếu có thêm bất kỳ thắc mắc nào Quý khách vui lòng liên hệ chuyên viên tư vấn <span th:text="${MBALPrintPolicyVO.agents[0].agentName}"></span>, địa chỉ email
+        <span th:text="${MBALPrintPolicyVO.agents[0].agentEmail}"></span>, số điện thoại <span th:text="${MBALPrintPolicyVO.agents[0].phoneNumber}"></span> hoặc Tổng đài chăm sóc khách hàng số <a href="tel:+02422298888">024 222 9 8888</a>,
+        địa chỉ hòm thư điện tử <a href="mailto:dvkh@mbageas.life">dvkh@mbageas.life</a> </p>
+      <br />
+      <p>Xin chân thành cảm ơn. </p>
+      <p>Phòng Thẩm Định và Phát hành Hợp đồng MB Ageas Life! </p>
+    </div>
+    <div class="footer">
+      <img src="https://mbal-portal-prod.s3.ap-southeast-1.amazonaws.com/images/logo_w488_h267.png"
+        alt="MB Ageas Footer" width="150" />
+      <div class="footer-text">
+        <div class="footer-header-group">
+          <div class="footer-header-item transparent">
+            <span>&nbsp;Minh bạch&nbsp;</span>
+            <div class="divider-line"></div>
+          </div>
+          <div class="footer-header-item agile">
+            <span>&nbsp;Năng động&nbsp;</span>
+            <div class="divider-line"></div>
+          </div>
+          <div class="footer-header-item trustworthy">
+            <span>&nbsp;Tin cậy&nbsp;</span>
+            <div class="divider-line"></div>
+          </div>
+          <div class="footer-header-item passionate">
+            <span>&nbsp;Đam mê&nbsp;</span>
+            <div class="divider-line"></div>
+          </div>
+          <div class="footer-header-item united">
+            <span>&nbsp;Đoàn kết&nbsp;</span>
+            <div class="divider-line"></div>
+          </div>
+        </div>
+        <p>
+          <strong style="color: #0033cc">Phòng Thẩm định và phát hành hợp đồng
+          </strong>
+        </p>
+        <p style="color: #7f7f7f">Công ty TNHH Bảo hiểm nhân thọ MB Ageas</p>
+        <p>
+          📍 Tầng 15, Tòa nhà 21 Cát Linh, Phường Cát Linh, Quận Đống Đa, Thành
+          phố Hà Nội
+        </p>
+        <p>
+          📞 <a href="tel:842422296666">+84 (24) 2229 6666</a> | 🖨️
+          <a href="tel:+8462698080">+84 4 626 9 8080</a> | 🌐
+          <a href="https://mbageas.life">mbageas.life</a>
+        </p>
+      </div>
+    </div>
+    <!--End footer-->
 </body>
+
 </html>
+<!--
+Variables : [(${tên_biến})]
+- MBALPrintPolicyVO.policyHolder.MBALPersonVO.fullName / MBALPrintPolicyVO.policyHolder.MBALOrganizationVO.companyName: Họ tên khách hàng
+- MBALPrintPolicyVO.agents[0].agentName: tên chuyên viên tư vấn
+- MBALPrintPolicyVO.agents[0].agentEmail: email chuyên viên tư vấn
+- MBALPrintPolicyVO.agents[0].phoneNumber: email chuyên viên tư vấn
+- MBALPrintPolicyVO.cal.uwSubStatusChangedDate: ngày tiếp nhận thành công Thư chấp thuận bảo hiểm có điều kiện
+-->
