@@ -18,7 +18,7 @@ public class EditorController {
     ObjectMapper mapper = new ObjectMapper();
 
     // Đường dẫn tuyệt đối hoặc tương đối tới file JSON
-    File jsonFile = new File("src\\main\\resources\\static\\PolicyPack_20250509.json");
+    File jsonFile = new File("src\\main\\resources\\static\\PolicyPack_20250513.json");
     // Thêm vào model (truy cập được ở Thymeleaf như ${policy.policyNumber}, v.v.)
     try {
       TypeReference<Map<String, Object>> typeRef = new TypeReference<>() {
