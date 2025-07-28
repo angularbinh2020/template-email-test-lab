@@ -18,14 +18,15 @@ public class EditorController {
     ObjectMapper mapper = new ObjectMapper();
 
     // Đường dẫn tuyệt đối hoặc tương đối tới file JSON
-    File jsonFile = new File("src\\main\\resources\\static\\PolicyPack_20250513.json");
+    File jsonFile = new File("src\\main\\resources\\static\\pending.json");
     // Thêm vào model (truy cập được ở Thymeleaf như ${policy.policyNumber}, v.v.)
     try {
       TypeReference<Map<String, Object>> typeRef = new TypeReference<>() {
       };
       Map<String, Object> root = mapper.readValue(jsonFile, typeRef);
-      Map<String, Object> MBALPrintPolicyVO = (Map<String, Object>) root.get("MBALPrintPolicyVO");
-      model.addAttribute("MBALPrintPolicyVO", MBALPrintPolicyVO);
+      // Map<String, Object> MBALPrintPolicyVO = (Map<String, Object>) root.get("MBALPrintPolicyVO");
+      // model.addAttribute("MBALPrintPolicyVO", MBALPrintPolicyVO);
+      model.addAttribute("MBALPrintPolicyVO", root);
     } catch (Exception e) {
       e.printStackTrace();
       model.addAttribute("error", "Không thể đọc file JSON");

@@ -1,0 +1,156 @@
+{
+    "policyNumber": "polNumber534534",
+    "receivedDateOfTheRequest": "27/05/2025",
+    "expiryDate": "27/05/2025",
+    "applicationNumber": "AF543853948",
+    "reqChangeType": "reqChangeType",
+    "rejectReason": [
+        "Lý do từ chối 1",
+        "Lý do từ chối 2"
+    ],
+    "dateOfPendingEmail": "29/05/2025",
+    "completedDate": "29/05/2025",
+    "receivedDateOfAdditionalInformation": "29/05/2025",
+    "policyHolder": {
+        "fullName": "Policy holder name",
+        "pending": [
+            {
+                "content": "Pending code 1",
+                "invalidReason": "invalid document reason 1"
+            },
+            {
+                "content": "Pending code 2",
+                "invalidReason": "invalid document reason 2"
+            }
+        ],
+        "pendingSubmitted": [
+            {
+                "content": "Pending submitted code 1",
+                "invalidReason": "invalid document reason 1"
+            },
+            {
+                "content": "Pending submitted code 2",
+                "invalidReason": "invalid document reason 2"
+            }
+        ]
+    },
+    "lifeAssured": {
+        "fullName": "Policy holder name",
+        "pending": [
+            {
+                "content": "Pending code 1",
+                "invalidReason": "invalid document reason 1"
+            },
+            {
+                "content": "Pending code 2",
+                "invalidReason": "invalid document reason 2"
+            }
+        ],
+        "pendingSubmitted": [
+            {
+                "content": "Pending submitted code 1",
+                "invalidReason": "invalid document reason 1"
+            },
+            {
+                "content": "Pending submitted code 2",
+                "invalidReason": "invalid document reason 2"
+            }
+        ]
+    },
+    "pendingLifeAssureds": [
+        {
+            "fullName": "Policy holder name 1",
+            "pending": [
+                {
+                    "content": "Pending code 1",
+                    "invalidReason": "invalid document reason 1"
+                },
+                {
+                    "content": "Pending code 2",
+                    "invalidReason": "invalid document reason 2"
+                }
+            ],
+            "pendingSubmitted": [
+                {
+                    "content": "Pending submitted code 1",
+                    "invalidReason": "invalid document reason 1"
+                },
+                {
+                    "content": "Pending submitted code 2",
+                    "invalidReason": "invalid document reason 2"
+                }
+            ]
+        },
+        {
+            "fullName": "Policy holder name 2",
+            "pending": [
+                {
+                    "content": "Pending code 1",
+                    "invalidReason": "invalid document reason 1"
+                },
+                {
+                    "content": "Pending code 2",
+                    "invalidReason": "invalid document reason 2"
+                }
+            ],
+            "pendingSubmitted": [
+                {
+                    "content": "Pending submitted code 1",
+                    "invalidReason": "invalid document reason 1"
+                },
+                {
+                    "content": "Pending submitted code 2",
+                    "invalidReason": "invalid document reason 2"
+                }
+            ]
+        }
+    ],
+    "pendingSubmittedLifeAssureds": [
+        {
+            "fullName": "Policy holder name 1",
+            "pending": [
+                {
+                    "content": "Pending code 1",
+                    "invalidReason": "invalid document reason 1"
+                },
+                {
+                    "content": "Pending code 2",
+                    "invalidReason": "invalid document reason 2"
+                }
+            ],
+            "pendingSubmitted": [
+                {
+                    "content": "Pending submitted code 1",
+                    "invalidReason": "invalid document reason 1"
+                },
+                {
+                    "content": "Pending submitted code 2",
+                    "invalidReason": "invalid document reason 2"
+                }
+            ]
+        },
+        {
+            "fullName": "Policy holder name 2",
+            "pending": [
+                {
+                    "content": "Pending code 1",
+                    "invalidReason": "invalid document reason 1"
+                },
+                {
+                    "content": "Pending code 2",
+                    "invalidReason": "invalid document reason 2"
+                }
+            ],
+            "pendingSubmitted": [
+                {
+                    "content": "Pending submitted code 1",
+                    "invalidReason": "invalid document reason 1"
+                },
+                {
+                    "content": "Pending submitted code 2",
+                    "invalidReason": "invalid document reason 2"
+                }
+            ]
+        }
+    ]
+}

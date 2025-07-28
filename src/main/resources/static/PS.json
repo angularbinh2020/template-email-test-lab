@@ -1,0 +1,327 @@
+{
+    "changeId": 1205200034,
+    "changeType": "",
+    "applicationDate": "29/04/2025",
+    "registrationDate": "29/04/2025",
+    "expiryDate": "14/05/2025",
+    "executedUser": "user",
+    "executedDate": "29/04/2025",
+    "approvedUserName": "user2",
+    "approvedDate": "29/04/2025",
+    "policyInfo": {
+        "issueDate": "29/04/2025",
+        "nextDueDate": "",
+        "acknowledgeDate": "",
+        "freelookEndDate": "",
+        "premium": "",
+        "premiumNext": "",
+        "proposalNo": "pro2025041221",
+        "riskStatus": "Terminated",
+        "mainInsured": {
+            "person": {
+                "email": "exampleuserexample.com",
+                "gender": "F",
+                "mobile": "555 123 4567",
+                "birthday": "12/03/1998",
+                "fullName": "VIN234 20250331001 BROWN",
+                "certiCode": "46879654632750328001462",
+                "certiType": "1",
+                "bpNumber": "",
+                "declarationDate": "",
+                "issuerName": "",
+                "location": "",
+                "extendedProps": {}
+            },
+            "partyId": 3221889,
+            "fullAddress": "xxxxxxx",
+            "extendedProps": {}
+        },
+        "mainCoverage": {
+            "sumAssured": "200.000",
+            "productCode": "CAN102",
+            "productName": "Cancer_Special + Survival",
+            "extendedProps": {},
+            "installPremium": "1.000",
+            "paymentFrequency": "Năm"
+        },
+        "policyHolder": {
+            "person": {
+                "email": "exampleuserexample.com",
+                "gender": "F",
+                "mobile": "555 123 4567",
+                "birthday": "12/03/1998",
+                "fullName": "VIN234 20250331001 BROWN",
+                "certiCode": "46879654632750328001462",
+                "certiType": "1",
+                "extendedProps": {}
+            },
+            "partyId": 3221889,
+            "partyType": 1,
+            "fullAddress": "xxxxxxx",
+            "extendedProps": {}
+        },
+        "policyNumber": "820000013335",
+        "extendedProps": {},
+        "inceptionDate": "10/03/2025"
+    },
+    "serviceAgent": {
+        "agentCode": "",
+        "agentName": "",
+        "gender": "",
+        "mobile": "",
+        "email": "",
+        "salesChannelName": "",
+        "extendedProps": {}
+    },
+    "currentUserInfo": {
+        "person": {
+            "email": "exampleuserexample.com",
+            "gender": "F",
+            "mobile": "555 123 4567",
+            "birthday": "12/03/1998",
+            "fullName": "VIN234 20250331001 BROWN",
+            "certiCode": "46879654632750328001462",
+            "certiType": "1",
+            "bpNumber": "",
+            "declarationDate": "",
+            "issuerName": "",
+            "location": "",
+            "extendedProps": {}
+        }
+    },
+    "documentList": [
+        {
+            "fileId": 12313,
+            "docType": "PS_01",
+            "docName": "",
+            "receivedDate": ""
+        }
+    ],
+    "policyCommentList": [
+        {
+            "comment": "note",
+            "commentDate": "",
+            "userRemark": "uatTst1"
+        }
+    ],
+    "TemplateName": "FREELOOK_COMPLETE",
+    "changeStatus": "In Force",
+    "generateDate": "29/04/2025",
+    "corresGenDate": "29",
+    "corresGenYear": "2025",
+    "effectiveDate": "29/04/2025",
+    "extendedProps": {},
+    "corresGenMonth": "4",
+    "sendSmsToCustomer": "Y",
+    "csFreeLookInforceLetter": {
+        "wholePolicy": "Y",
+        "freelookAmount": "",
+        "disbursementList": [
+            {
+                "paymentMethod": "Cash",
+                "bankAccountNumber": "",
+                "branchName": "",
+                "bankName": "",
+                "accountName": "",
+                "transferredPolicyNumber": "",
+                "transferredPHFullName": "",
+                "transferredAmount": "",
+                "refundAmount": "",
+                "payee": {
+                    "person": {
+                        "email": "exampleuserexample.com",
+                        "gender": "F",
+                        "mobile": "555 123 4567",
+                        "birthday": "12/03/1998",
+                        "fullName": "VIN234 20250331001 BROWN",
+                        "certiCode": "46879654632750328001462",
+                        "certiType": "1",
+                        "extendedProps": {}
+                    },
+                    "partyId": 3221889,
+                    "partyType": 1,
+                    "fullAddress": "xxxxxxx",
+                    "extendedProps": {}
+                }
+            }
+        ]
+    },
+    "partialWithdrawalInforceLetter": {
+        "beforePAV": "",
+        "beforeBAV": "",
+        "beforeTAV": "",
+        "remaindPAV": "",
+        "remaindBAV": "",
+        "remaindTAV": "",
+        "netWithdrawalAmount": "",
+        "totalInstallmentPremium": "",
+        "reduceSaFlag": "Y",
+        "saAfterChange": "",
+        "withdrawAmount": "",
+        "withdrawalCharge": "",
+        "nextPricingDate": "",
+        "fundAccountValueInfoList": [
+            {
+                "accountType": "1",
+                "fundName": "",
+                "fundCode": "",
+                "unitsPrice": "",
+                "units": "",
+                "fundAmount": "",
+                "amount": ""
+            }
+        ],
+        "disbursementList": [
+            {
+                "paymentMethod": "Cash",
+                "bankAccountNumber": "",
+                "branchName": "",
+                "bankName": "",
+                "accountName": "",
+                "transferredPolicyNumber": "",
+                "transferredPHFullName": "",
+                "transferredAmount": "",
+                "refundAmount": "",
+                "payee": {
+                    "person": {
+                        "email": "exampleuserexample.com",
+                        "gender": "F",
+                        "mobile": "555 123 4567",
+                        "birthday": "12/03/1998",
+                        "fullName": "VIN234 20250331001 BROWN",
+                        "certiCode": "46879654632750328001462",
+                        "certiType": "1",
+                        "extendedProps": {}
+                    },
+                    "partyId": 3221889,
+                    "partyType": 1,
+                    "fullAddress": "xxxxxxx",
+                    "extendedProps": {}
+                }
+            }
+        ],
+        "effectiveRiderList": [
+            {
+                "productName": "",
+                "laFullName": "",
+                "effectiveDate": "",
+                "installPremium": "",
+                "sumAssured": ""
+            }
+        ]
+    },
+    "singleTopUpInforceLetter": {
+        "topUpAmount": "",
+        "initialCharge": "",
+        "allocatedAmount": "",
+        "nextPricingDate": "",
+        "fundAccountValueInfoList": [
+            {
+                "accountType": "2",
+                "fundName": "",
+                "fundCode": "",
+                "unitsPrice": "",
+                "units": "",
+                "fundAmount": "",
+                "amount": ""
+            }
+        ]
+    },
+    "partialWithdrawalWorkSheet": {
+        "decision": "",
+        "reasonList": [
+            ""
+        ],
+        "withdrawAmount": "",
+        "withdrawalCharge": "",
+        "reduceSaFlag": "N",
+        "saAfterChange": "",
+        "totalRefundAmount": "",
+        "disbursementList": [
+            {
+                "paymentMethod": "Cash",
+                "bankAccountNumber": "",
+                "branchName": "",
+                "bankName": "",
+                "accountName": "",
+                "transferredPolicyNumber": "",
+                "transferredPHFullName": "",
+                "transferredAmount": "",
+                "refundAmount": "",
+                "payee": {
+                    "person": {
+                        "email": "exampleuserexample.com",
+                        "gender": "F",
+                        "mobile": "555 123 4567",
+                        "birthday": "12/03/1998",
+                        "fullName": "VIN234 20250331001 BROWN",
+                        "certiCode": "46879654632750328001462",
+                        "certiType": "1",
+                        "extendedProps": {}
+                    },
+                    "partyId": 3221889,
+                    "partyType": 1,
+                    "fullAddress": "xxxxxxx",
+                    "extendedProps": {}
+                }
+            }
+        ]
+    },
+    "singleTopUpWorkSheet": {
+        "decision": "",
+        "reasonList": [
+            ""
+        ],
+        "topUpAmount": ""
+    },
+    "freelookWorkSheet": {
+        "decision": "accept",
+        "reasonList": [
+            ""
+        ],
+        "freelookReason": "",
+        "freelookAmount": "",
+        "wholePolicy": "Y",
+        "disbursementList": [
+            {
+                "paymentMethod": "Cash",
+                "bankAccountNumber": "",
+                "branchName": "",
+                "bankName": "",
+                "accountName": "",
+                "transferredPolicyNumber": "",
+                "transferredPHFullName": "",
+                "transferredAmount": "",
+                "refundAmount": "",
+                "payee": {
+                    "person": {
+                        "email": "exampleuserexample.com",
+                        "gender": "F",
+                        "mobile": "555 123 4567",
+                        "birthday": "12/03/1998",
+                        "fullName": "VIN234 20250331001 BROWN",
+                        "certiCode": "46879654632750328001462",
+                        "certiType": "1",
+                        "extendedProps": {}
+                    },
+                    "partyId": 3221889,
+                    "partyType": 1,
+                    "fullAddress": "xxxxxxx",
+                    "extendedProps": {}
+                }
+            }
+        ]
+    },
+    "opPendingTaskLetter": {
+        "expiryDate": "",
+        "opPendingIssues": [
+            {
+                "phIndi": "Y",
+                "pendingCustomerName": "",
+                "pendingCode": "",
+                "pendingDesc": "",
+                "pendingAdditionalDesc": ""
+            }
+        ]
+    }
+}

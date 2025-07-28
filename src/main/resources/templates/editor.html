@@ -174,12 +174,6 @@
       list-style: none;
     }
 
-    ul li::before {
-      content: "-";
-      position: absolute;
-      left: 5px;
-    }
-
     ul li {
       font-size: 12px;
       margin-bottom: 5px;
@@ -380,26 +374,86 @@
   <div class="text_content">
     <div class="intro">
       <br />
-      <p>Kính gửi Quý khách <span th:if="${MBALPrintPolicyVO.policyHolder.['MBALPersonVO'] != null}"
-      th:text="${MBALPrintPolicyVO.policyHolder.MBALPersonVO.fullName}"></span>
-    <span th:if="${MBALPrintPolicyVO.policyHolder.['MBALOrganizationVO'] != null}"
-      th:text="${MBALPrintPolicyVO.policyHolder.MBALOrganizationVO.companyName}"></span></p>
+      <p>Kính gửi Quý khách, </p>
       <br />
       <p>
-        Cảm ơn phản hồi của Quý khách về Thư chấp thuận bảo hiểm có điều kiện tới Phòng Thẩm định và Phát hành Hợp đồng MB Ageas Life,
+        Phòng Quản lý hợp đồng MB Ageas Life đã nhận được thông tin/ chứng từ bổ sung cho yêu cầu:
+        <b th:text="${MBALPrintPolicyVO.reqChangeType}"></b> - mã yêu cầu <b th:text="${MBALPrintPolicyVO.applicationNumber}"></b> của Hợp đồng bảo
+        hiểm số
+        <b th:text="${MBALPrintPolicyVO.policyNumber}"></b>,
+        vào ngày <kbr th:text="${MBALPrintPolicyVO.receivedDateOfAdditionalInformation}"></kbr>.
       </p>
-      <br/>
-      <p>Chúng tôi xin xác nhận đã tiếp nhận thành công Thư chấp thuận bảo hiểm có điều kiện từ Quý khách vào ngày <span th:text="${MBALPrintPolicyVO.cal.uwSubStatusChangedDate}"></span>. Hiện tại, hồ sơ của Quý khách đang được xử lý theo quy trình thẩm định và phát hành hợp đồng bảo hiểm. </p>
-        <br/>
-      <p>Chúng tôi sẽ sớm cập nhật thông tin về tình trạng hợp đồng khi có kết quả tiếp theo. Nếu có thêm bất kỳ thắc mắc nào Quý khách vui lòng liên hệ chuyên viên tư vấn <span th:text="${MBALPrintPolicyVO.agents[0].agentName}"></span>, địa chỉ email
-        <span th:text="${MBALPrintPolicyVO.agents[0].agentEmail}"></span>, số điện thoại <span th:text="${MBALPrintPolicyVO.agents[0].phoneNumber}"></span> hoặc Tổng đài chăm sóc khách hàng số <a href="tel:+02422298888">024 222 9 8888</a>,
-        địa chỉ hòm thư điện tử <a href="mailto:dvkh@mbageas.life">dvkh@mbageas.life</a> </p>
+      <b>
+        <div th:if="${MBALPrintPolicyVO.policyHolder != null and MBALPrintPolicyVO.policyHolder.pendingSubmitted != null}">
+          <p th:text="${MBALPrintPolicyVO.policyHolder.fullName  + ' :'}"></p>
+          <ul>
+            <li th:each="code : ${MBALPrintPolicyVO.policyHolder.pendingSubmitted}">
+              <span th:text="${'- ' + code.content}">
+              </span>
+            </li>
+          </ul>
+          <br />
+        </div>
+        <div th:if="${MBALPrintPolicyVO.pendingSubmittedLifeAssureds != null}" th:each="lifeAssured : ${MBALPrintPolicyVO.pendingSubmittedLifeAssureds}">
+          <p th:text="${lifeAssured.fullName  + ' :'}"></p>
+          <ul>
+            <li th:each="code : ${lifeAssured.pendingSubmitted}">
+              <span th:text="${'- ' + code.content}">
+              </span>
+            </li>
+          </ul>
+        </div>
+      </b>
+      <div th:if="(MBALPrintPolicyVO.policyHolder != null and MBALPrintPolicyVO.policyHolder.pending != null) or (MBALPrintPolicyVO.pendingLifeAssureds != null )">
+        <p>Các thông tin/ chứng từ chưa bổ sung:</p>
+        <b>
+          <div th:if="MBALPrintPolicyVO.policyHolder != null and MBALPrintPolicyVO.policyHolder.pending != null">
+            <p th:text="${MBALPrintPolicyVO.policyHolder.fullName + ' :'}"></p>
+            <ul>
+              <li th:each="code : ${MBALPrintPolicyVO.policyHolder.pending}">
+                <span th:text="${'- ' + code.content}">
+                </span>
+              </li>
+            </ul>
+            <br />
+          </div>
+          <div th:if="${MBALPrintPolicyVO.pendingLifeAssureds != null}" th:each="lifeAssured : ${MBALPrintPolicyVO.pendingLifeAssureds}">
+            <p th:text="${MBALPrintPolicyVO.lifeAssured.fullName + ' :'}"></p>
+            <ul>
+              <li th:each="code : ${MBALPrintPolicyVO.lifeAssured.pending}">
+                <span th:text="${'- ' + code.content}">
+                </span>
+              </li>
+            </ul>
+          </div>
+        </b>
+        <br />
+      </div>
+
+      <p>Phòng Quản lý hợp đồng MB Ageas Life sẽ phản hồi/ thực hiện yêu cầu trên của Quý khách trong thời gian
+        sớm
+        nhất. </p>
       <br />
-      <p>Xin chân thành cảm ơn. </p>
-      <p>Phòng Thẩm Định và Phát hành Hợp đồng MB Ageas Life! </p>
+      <p>
+        Trong trường hợp cần hỗ trợ thêm, xin Quý khách vui lòng liên hệ với
+        MB Ageas Life <b>qua đường dây nóng: <a href="tel:+02422298888"><b>024 222 9 8888</b></a> hoặc Hòm thư
+          Dịch
+          vụ
+          khách hàng: <a href="mailto:dvkh@mbageas.life"><b>dvkh@mbageas.life</b></a>,</b> chúng tôi luôn sẵn
+        sàng phục vụ Quý
+        khách.
+      </p>
+      <p>Trân trọng, </p>
+      <div class="qr-section">
+        <a href="https://mbal.vn/MBALapp" alt="">
+          <img src="https://mbal-ebao-prod.s3.ap-southeast-1.amazonaws.com/public/MBAL_APP-20250307-073151.png"
+            alt="QR Code"></a>
+        <p>Để tra cứu nội dung chi tiết, Quý khách vui lòng quét mã QR code hoặc nhấn vào mã QR
+          code để tải ứng dụng MBAL Style.</p>
+      </div>
     </div>
     <div class="footer">
-      <img src="https://mbal-portal-prod.s3.ap-southeast-1.amazonaws.com/images/logo_w488_h267.png"
+      <img src="https://mbal-portal-prod.s3.ap-southeast-1.amazonaws.com/images/logo_w488_h267.png" height="90"
         alt="MB Ageas Footer" width="150" />
       <div class="footer-text">
         <div class="footer-header-group">
@@ -425,7 +479,7 @@
           </div>
         </div>
         <p>
-          <strong style="color: #0033cc">Phòng Thẩm định và phát hành hợp đồng
+          <strong style="color: #0033cc">Phòng Quản lý hợp đồng
           </strong>
         </p>
         <p style="color: #7f7f7f">Công ty TNHH Bảo hiểm nhân thọ MB Ageas</p>
@@ -434,7 +488,7 @@
           phố Hà Nội
         </p>
         <p>
-          📞 <a href="tel:842422296666">+84 (24) 2229 6666</a> | 🖨️
+          📞 <a href="tel:+842422298888">+84 (24) 2229 8888</a> | 🖨️
           <a href="tel:+8462698080">+84 4 626 9 8080</a> | 🌐
           <a href="https://mbageas.life">mbageas.life</a>
         </p>
@@ -444,11 +498,3 @@
 </body>
 
 </html>
-<!--
-Variables : [(${tên_biến})]
-- MBALPrintPolicyVO.policyHolder.MBALPersonVO.fullName / MBALPrintPolicyVO.policyHolder.MBALOrganizationVO.companyName: Họ tên khách hàng
-- MBALPrintPolicyVO.agents[0].agentName: tên chuyên viên tư vấn
-- MBALPrintPolicyVO.agents[0].agentEmail: email chuyên viên tư vấn
-- MBALPrintPolicyVO.agents[0].phoneNumber: email chuyên viên tư vấn
-- MBALPrintPolicyVO.cal.uwSubStatusChangedDate: ngày tiếp nhận thành công Thư chấp thuận bảo hiểm có điều kiện
--->
